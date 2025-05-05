@@ -1,180 +1,488 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Jeshwanth Challagundla's Profile</title>
+<html lang="en" class="">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/extra_min_styles.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Jeshwanth Challagundla's Profile</title>
 
-    <meta name="viewport" content="width=device-width">
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        <!-- Icons -->
-    <link rel="stylesheet" href="stylesheets/css/academicons.css"/>
-    <link rel="stylesheet" href="stylesheets/css/font-awesome.css"/>
-    <link rel="stylesheet" href="stylesheets/css/academicons.min.css"/>
-    <link rel="stylesheet" href="stylesheets/style-svg.html">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-    <body data-new-gr-c-s-check-loaded="8.876.0" data-gr-ext-installed=""><div class="wrapper">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-     <!-- HEADER -->
-    <header>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <h1 align="center">Jeshwanth Challagundla</h1>
-        <!-- Picture + Links + News -->
-        <div style="margin-bottom: 10px;" align="center">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css"
+    integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrTvGX8NzGSROL/PYFrMZLcCiuAvVSA9cYAU6OScWZZN51BQew=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-            <!-- Portrait -->
-            <!-- <img src="images/portrait.JPG" alt="Portrait" WIDTH=160 style="margin-bottom: 8px;border-radius: 10px;"> -->
-            <img src="./files/headshot.jpg" alt="Portrait" class="portrait">
+  <script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#1e40af',
+                hover: '#1d4ed8'
+              },
+              secondary: '#64748b',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            spacing: {
+              '3.5': '0.875rem',
+            }
+          }
+        }
+      }
+  </script>
 
-            <!-- Email -->
-            <p style="margin-bottom:0;">jeswamth111@gmail.com</p>
-            <p style="margin : 1;">jeshwanthc@google.com</p>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .portrait {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid #f1f5f9;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+    .dark .portrait {
+        border-color: #1e293b;
+    }
 
 
-            <!-- CV -->
-            <a href="./files/JeshwanthChallagundla_cv.pdf" style="margin-right:14px;" target="_blank"><i class="ai ai-cv" style="font-size: 32px;"></i>
-            </a>
+    .icon-link span[class*="fa-"],
+    .icon-link svg {
+        display: inline-block;
+        width: 1.875rem;
+        height: 1.875rem;
+        vertical-align: middle;
+        color: #64748b;
+        transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+     .icon-link span[class*="fa-"] {
+        font-size: 1.875rem;
+        line-height: 1;
+     }
 
-            <!-- Git -->
-            <a href="https://github.com/jeshwanthc" style="margin-right:14px;" target="_blank">
-                <i class="fa fa-github" style="font-size:32px;"></i>
-                <!-- color: #A7A499" -->
-            </a>
+    .dark .icon-link span[class*="fa-"],
+    .dark .icon-link svg {
+        color: #94a3b8;
+    }
 
-            <!-- Scholar -->
-            <a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" style="margin-right:14px;" target="_blank">
-                <i class="ai ai-google-scholar big-icon" style="font-size:32px;"></i>
-            </a>
 
-            <!-- Linkedin -->
-            <a href="https://www.linkedin.com/in/jeshwanth-challagundla/" style="margin-right:14px;" target="_blank">
-                <i class="fa fa-linkedin-square" style="font-size:32px;"></i>
-            </a>
-            <br>
-            <br>
+    .icon-link:hover span[class*="fa-"],
+    .icon-link:hover svg {
+      color: #0f172a;
+      transform: scale(1.1);
+    }
+    .dark .icon-link:hover span[class*="fa-"],
+    .dark .icon-link:hover svg {
+      color: #f8fafc;
+    }
+
+
+    .section-header {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.5rem;
+        border-bottom-width: 2px;
+        border-color: #e2e8f0;
+    }
+    .dark .section-header {
+        color: #f1f5f9;
+        border-color: #334155;
+    }
+
+     main ul {
+        list-style-position: outside;
+        padding-left: 1.25rem;
+        margin-top: 0.5rem;
+    }
+     main li {
+        margin-bottom: 0.5rem;
+        padding-left: 0.5rem;
+    }
+     main li::marker {
+        color: #64748b;
+    }
+     .dark main li::marker {
+        color: #94a3b8;
+    }
+
+    .nav-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #theme-toggle {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: #e2e8f0;
+        color: #334155;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        z-index: 10;
+    }
+    #theme-toggle:hover {
+        background-color: #cbd5e1;
+    }
+    .dark #theme-toggle {
+        background-color: #334155;
+        color: #cbd5e1;
+    }
+    .dark #theme-toggle:hover {
+        background-color: #475569;
+    }
+    .dark #theme-toggle-light-icon { display: none; }
+    #theme-toggle-dark-icon { display: none; }
+    .dark #theme-toggle-dark-icon { display: inline-block; }
+
+
+  </style>
+
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 leading-relaxed transition-colors duration-300 ease-in-out">
+  <div class="container mx-auto max-w-6xl p-4 md:p-8 relative">
+    <button id="theme-toggle" type="button" title="Toggle dark mode">
+        <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        <svg id="theme-toggle-light-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+    </button>
+
+    <div class="md:flex bg-white dark:bg-slate-800 rounded-xl shadow-xl overflow-hidden transition-colors duration-300 ease-in-out">
+
+      <aside class="md:w-1/4 p-6 md:p-8 text-center mb-12 md:mb-0 flex flex-col items-center self-start">
+        <img
+            src="./files/headshot.jpg"
+            alt="Portrait of Jeshwanth Challagundla"
+            class="portrait"
+            onerror="this.onerror=null; this.src='https://placehold.co/160x160/e2e8f0/64748b?text=JC'; this.alt='Placeholder portrait image';"
+        >
+
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">Jeshwanth Challagundla</h1>
+
+        <p class="text-slate-600 dark:text-slate-400 text-sm mb-5">jeswanth111@gmail.com</p>
+
+        <div class="flex space-x-4 mb-6 justify-center w-full">
+          <a href="https://github.com/jeshwanthc" target="_blank" aria-label="GitHub Profile" class="icon-link">
+            <span class="fab fa-github" aria-hidden="true"></span>
+          </a>
+          <a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank"
+            aria-label="Google Scholar Profile" class="icon-link">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/jeshwanth-challagundla/" target="_blank" aria-label="LinkedIn Profile"
+            class="icon-link">
+            <span class="fab fa-linkedin" aria-hidden="true"></span>
+          </a>
         </div>
 
-    </header>
-      <section>
+        <nav class="flex flex-col space-y-2 w-full items-center md:items-stretch">
+          <a href="#" class="nav-button w-full text-center text-sm font-medium bg-slate-200 hover:bg-slate-300 text-slate-700 hover:text-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white rounded-lg px-4 py-2 transition-colors duration-150 ease-in-out">
+             Home
+          </a>
+          </nav>
+      </aside>
 
-        <div style="margin-bottom: 10px;" align="center"></div>
-        <h1>Hello!</h1>
+      <main class="md:w-3/4 p-6 md:p-10">
 
-        
-        <p>
-            I am a Senior Machine Learning Software Engineer at Google, where I focus on advancing the capabilities of machine learning models and AI-driven systems. My primary work has been with the Gemini project, where I led the development and launch of the advanced data analysis feature and seamlessly integrating it with Google Workspace and other tools. I have architected scalable infrastructure for agent orchestration, dynamic prompting and multi-step planning, which enhances model adaptability and flexibility across diverse tasks. My work has also involved improving model quality using prompt engineering, fine-turning and reinforcement learning.
-        </p>
+        <section id="about" class="mb-12">
+          <h2 class="section-header">Hello!</h2>
+          <div class="space-y-4 text-slate-700 dark:text-slate-300 text-base">
+             <p>
+                I engineer intelligent systems at Google DeepMind. As a Senior Machine Learning Software Engineer, I specialize in AI-driven Software Engineering and Neural Network Optimization.</p>
+             <p>
+                At DeepMind, I engineer core components for Gemini, developing its Advanced Data Analysis and Gemini Canvas web development capabilities. My work involves building robust planning, prompting, and safety infrastructure for these cutting-edge features.</p>
+             <p>
+                Before joining DeepMind, I spearheaded a central personalization platform within Google Assistant and fine-tuned contact models using advanced Neural Network Optimization. My background also includes optimizing perception and localization networks for autonomous vehicles during my time at General Motors.</p>
+             <p>
+                My passion lies at the intersection of cutting-edge research: exploring everything from second-order optimization and autonomous driving to Generative AI, agentic frameworks, and AI agents that engineer software. I actively contribute back to the research community through peer review and program committee roles.
+             </p>
+          </div>
+        </section>
 
-        <p>
-            Before Google, I worked on autonomous driving technologies at General Motors, where I helped improve perception and localization for autonomous vehicles. I have a Master's degree in Electrical Engineering from the University of Texas at Arlington, where my research focused on second-order optimization for neural network training, and I’ve published papers on topics ranging from optimization to autonomous robotics.
-        </p>
-
-        <p>
-            In addition to my engineering work, I regularly contribute to the research community by reviewing papers for leading conferences like NeurIPS, ICLR, and IEEE Transactions. My interests span LLMs, deep learning, computer vision, and agentic workflows. I’m continuously seeking new ways to push the boundaries of AI and multimodal understanding to solve complex, real-world problems.
-        </p>
-
-        <div id="work-experience">
-            <h2>Work Experience</h2>
-            <hr>
-            <div class="job">
-                <h3>Senior Machine Learning Software Engineer</h3>
-                <h4>Google, Mountain View, CA</h4>
-                <span class="date">Dec 02, 2019 - Present</span>
-                <h5>Gemini</h5>
-                <ul>
-                    <li>Led the development and launch of the Gemini advanced <a href="https://gemini.google/advanced/?hl=en#:~:text=Upload%20your%20documents-,Analyze%20your%20data,-Edit%20and%20run">data analysis feature</a> and seamlessly integrating it with Google Workspace and other tools.</li>
-                    <li>Enhanced model-generated insights by improving the quality and accuracy of code-generated graphs, delivering more actionable data visualizations.</li>
-                    <li>Iteratively improved model performance through fine-tuning, reinforcement learning (RL), and prompt engineering, leading to more robust and adaptive models.</li>
-                    <li>Architected a scalable infrastructure for agent orchestration, enabling dynamic prompting and multi-step planning, significantly optimizing task execution and model flexibility.</li>
+        <section id="work-experience" class="mb-12">
+          <h2 class="section-header">Work Experience</h2>
+          <div class="space-y-8">
+            <div class="job mb-8">
+              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Senior Machine Learning Software Engineer</h3>
+              <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">Google DeepMind, Mountain View, CA</h4>
+              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-4">Dec 2019 - Present</span>
+              <div class="mb-4 pl-4 border-l-4 border-blue-300 dark:border-blue-600">
+                <h5 class="text-lg font-semibold text-blue-800 dark:text-blue-400 mb-2">Gemini</h5>
+                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Gemini Canvas</h6>
+                <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                  <li>Fine-tuned the Gemini model to improve the quality of web apps built by Gemini Canvas, making the
+                    apps more visually appealing (beating OpenAI ChatGPT Canvas quality per TechRadar review). Gemini
+                    Canvas helps users build high-quality web apps previewable in the collaborative space.</li>
                 </ul>
-        
-                <h5>Google Assistant</h5>
-                <ul>
-                    <li>Developed BERT-based dual-encoder models to enhance contact matching accuracy for Google Assistant, optimizing communication-related queries like calling and messaging.</li>
-                    <li>Designed and implemented a comprehensive user profile platform that tracks all user interactions with Google Assistant, computing personalization features for tailored user experiences.</li>
+                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Gemini Advanced Data Analysis Feature</h6>
+                <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                  <li>Developed and launched Gemini advanced data analysis feature in ~40 languages
+                    across 200+ countries.</li>
+                  <li>The feature uses a multi-agent framework (planning, coding agents) for data analysis queries and
+                    is expanding to Google Sheets and Vertex AI.</li>
+                  <li>Improved the quality of model-generated insights from graphs using proprietary technology with pending patent.</li>
                 </ul>
+                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Gemini Horizontal Infra</h6>
+                <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                  <li>Developed horizontal infra for dynamically prompting the Gemini model based on user query, past
+                    conversations, previous model planning steps and other context to change model response
+                    distribution.</li>
+                  <li>Built a horizontal plan mutation framework for injecting synthetic model planning steps via
+                    deterministic rules, enabling feature development teams.</li>
+                </ul>
+                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Gemini Safety</h6>
+                <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                  <li>Implemented and tuned safety classifiers for Gemini Advanced data analysis feature</li>
+                </ul>
+              </div>
+              <div class="pl-4 border-l-4 border-green-300 dark:border-green-600">
+                <h5 class="text-lg font-semibold text-green-800 dark:text-green-400 mb-2">Google Assistant</h5>
+                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Personalization</h6>
+                <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                  <li>Led the development of a centralized personalization platform called Learn&Adapt predicting user preferences (music,
+                    movies, contacts, devices) using contextual analysis of interaction patterns, time, weather, and
+                    device status.</li>
+                  <li>Enhanced satisfaction for non-English speaking users in the US by 21% and achieved a 9% overall
+                    satisfaction improvement, significantly benefiting underrepresented language groups.</li>
+                </ul>
+                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Contact Matching</h6>
+                <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                  <li>Designed and deployed BERT-based dual-encoder models to improve contact matching accuracy for
+                    communication queries (calling, messaging).</li>
+                </ul>
+              </div>
             </div>
-        
-            <div class="job">
-                <h3>Autonomous Driving Software Engineer</h3>
-                <h4>General Motors, Warren, MI</h4>
-                <span class="date">May 01, 2017 - Nov 30, 2019</span>
-                <ul>
-                    <li>Developed a lane edge registration module using a weighted ICP algorithm, improving accuracy in autonomous vehicle navigation.</li>
-                    <li>Built a perception-map association module to reliably associate landmarks detected in perception with corresponding map landmarks, enhancing map-based localization.</li>
-                    <li>Implemented and benchmarked deep neural networks for pixel-wise scene segmentation on public and internal datasets.</li>
-                    <li>Developed a web tool using roslibjs to monitor the status of autonomous vehicle sensors and modules in real-time, improving system visibility and diagnostics.</li>
-                </ul>
-            </div>
-        
-            <div class="job">
-                <h3>Senior Software Engineer</h3>
-                <h4>Magna, Auburn Hills, MI</h4>
-                <span class="date">Feb 08, 2016 - Apr 30, 2017</span>
-                <ul>
-                    <li>Benchmarked an in-house computer vision chip against Mobileye EyeQ3, providing critical performance comparisons for advanced driver assistance systems (ADAS).</li>
-                    <li>Developed a closed-loop test system to evaluate front camera module features, ensuring robust ADAS functionality.</li>
-                    <li>Created automated test scripts for comprehensive testing of the Front Camera Module, streamlining validation processes.</li>
-                    <li>Developed a Python-based SPI sniffer library using the Beagle SPI Protocol Analyzer API for enhanced testing automation.</li>
-                </ul>
-            </div>
-        
-            <div class="job">
-                <h3>Embedded Software Engineer</h3>
-                <h4>UHV Technologies Inc., Fort Worth, TX</h4>
-                <span class="date">Jun 01, 2015 - Feb 07, 2016</span>
-                <ul>
-                    <li>Increased the accuracy of an aluminum alloy sorting system by 12% by developing machine learning models to classify X-ray fluorescence spectrum data.</li>
-                    <li>Developed a vision system to estimate the size of aluminum pieces in real-time, enhancing sorting precision.</li>
-                    <li>Automated the sorting process using LABVIEW and NI-6008, streamlining operations and improving overall efficiency.</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div id="research-publications">
-            
-            <h2>Research Publications</h2>
-            <hr>
-            <h3>Author</h3>
-            <ul>
-              <li><a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank">Multiple Gain Adaptations for Improved Neural Networks Training</a></li>
-              <li><a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank">State-Based Dynamic Graph with Breadth-First Progression for Autonomous Robots</a></li>
-              <li><a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank">Adaptive Multiple Optimal Learning Factors for Neural Network Training</a></li>
-              <li><em>Second Order Neural Network Optimization: Meta Analysis</em> (In progress)</li>
-              <li><em>LLMs as Master Forgers: Generating Synthetic Time Series Data for Manufacturing</em> (In progress)</li>
-            </ul>
-            
-            <h3>Partial Contributor</h3>
-            <ul>
-              <li><a href="https://gemini.google/advanced/?hl=en" target="_blank">Gemini: A Family of Highly Capable Multimodal Models</a></li>
-              <li><a href="https://gemini.google/advanced/?hl=en" target="_blank">Gemini 1.5: Unlocking Multimodal Understanding Across Millions of Tokens of Context</a></li>
-            </ul>
-            
-            <h3>Reviewer</h3>
-            <ul>
-              <li>Neural Information Processing Systems (NeurIPS)</li>
-              <li>Transactions on Machine Learning Research (TMLR)</li>
-              <li>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</li>
-              <li>IEEE Transactions on Artificial Intelligence (TAI)</li>
-            </ul>
 
-            <h3>IEEE Senior Member</h3>
-        </div>
-          
-      </section>
-    <footer>
-        <br>
-        <p style="line-height: 1.2;" align="center"><small>Website is based</a> on <a href="https://github.com/orderedlist/minimal">minimal</a> <br>
-            &copy; Jeshwanth Challagundla 2024
-</small></p>
+            <div class="job mb-8">
+              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Autonomous Driving Software Engineer</h3>
+              <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">General Motors (Collaboration with Cruise - Perception and
+                Localization), Warren, MI</h4>
+              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-3">May 2017 - Nov 2019</span>
+              <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                <li>Developed a lane edge registration module using a deep ICP algorithm to align perception lane edges
+                  with map lane edges, improving accuracy in autonomous vehicle navigation.</li>
+                <li>Built a perception-map association module to reliably associate landmarks detected in perception
+                  with corresponding map landmarks, enhancing map-based localization.</li>
+                <li>Implemented and benchmarked deep neural networks for pixel-wise scene segmentation on public and
+                  internal datasets, optimizing performance on GTX 1080 Ti GPUs.</li>
+                <li>Developed a web tool using roslibjs to monitor the status of autonomous vehicle sensors and modules
+                  in real-time, improving system visibility and diagnostics.</li>
+              </ul>
+            </div>
+
+            <div class="job mb-8">
+              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Senior Software Engineer</h3>
+              <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">Magna, Auburn Hills, MI</h4>
+              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-3">Feb 2016 - Apr 2017</span>
+              <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                <li>Benchmarked an in-house computer vision chip against Mobileye EyeQ3, providing critical performance
+                  comparisons for advanced driver assistance systems (ADAS).</li>
+                <li>Developed a closed-loop test system within dSpace AutomationDesk to evaluate front camera module
+                  features like lane-keeping assist and collision mitigation braking, ensuring robust ADAS
+                  functionality.</li>
+                <li>Automated system-level test cases for ADAS validation within dSpace AutomationDesk, improving
+                  efficiency and accuracy.</li>
+                <li>Developed a LabVIEW image comparison library for rear-view camera ECU overlay testing, enhancing
+                  visual testing capabilities.</li>
+              </ul>
+            </div>
+
+            <div class="job mb-8">
+              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Embedded Software Engineer</h3>
+              <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">UHV Technologies Inc., Fort Worth, TX</h4>
+              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-3">Jun 2015 - Feb 2016</span>
+              <h5 class="text-base font-semibold text-slate-700 dark:text-slate-300 mb-1">Aluminum Alloy Sorter using X-Ray Fluorescence, ARPA-E
+              </h5>
+              <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                <li>Increased aluminum alloy sorting accuracy by 12% using ML models on X-ray fluorescence spectrum data
+                  of various aluminum alloys.</li>
+                <li>Developed a vision system to estimate the size of aluminum pieces on a conveyor belt in real-time,
+                  enhancing sorting accuracy.</li>
+                <li>Automated the sorting process using LABVIEW and NI-6008, streamlining operations and improving
+                  system efficiency.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Engineering Intern</h3>
+              <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">UHV Technologies Inc., Fort Worth, TX</h4>
+              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-2">Sep 2014 - May 2015</span>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">Contributed to various engineering tasks supporting ongoing
+                projects.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="research-community" class="mb-12">
+          <h2 class="section-header">Research Publications & Community Involvement</h2>
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Author</h3>
+              <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                <li><a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank"
+                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">Multiple Gain Adaptations for Improved
+                    Neural Networks Training</a> (Received Best Presenter award from IEEE CCWC)</li>
+                <li><a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank"
+                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">State-Based Dynamic Graph with
+                    Breadth-First Progression for Autonomous Robots</a></li>
+                <li><a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank"
+                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">Adaptive Multiple Optimal Learning Factors
+                    for Neural Network Training</a></li>
+                <li>Trajectory Prediction in Autonomous Driving: a Comprehensive Review of Deep Learning Models and
+                  Future Direction</li>
+                <li>Improving Small Object Detection With Area-Scaled and Dynamic Focal Loss</li>
+                <li>Second Order Neural Network Optimization: Meta Analysis</li>
+                <li>LLMs as Master Forgers: Generating Synthetic Time Series Data for Manufacturing</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Partial Contributor</h3>
+              <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                <li><a href="https://deepmind.google/technologies/gemini/#introduction" target="_blank"
+                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">Gemini: A Family of Highly Capable
+                    Multimodal Models</a></li>
+                <li><a href="https://deepmind.google/technologies/gemini/gemini-1-5/" target="_blank"
+                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">Gemini 1.5: Unlocking Multimodal
+                    Understanding Across Millions of Tokens of Context</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Reviewer</h3>
+              <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                <li>Neural Information Processing Systems (NeurIPS)</li>
+                <li>The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
+                <li>International Conference on Learning Representations (ICLR)</li>
+                <li>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</li>
+                <li>IEEE Transactions on Artificial Intelligence (TAI)</li>
+                <li>Springer Nature: Neural Processing Letters</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Program Committee and Advisory Roles</h3>
+              <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                <li>Area Chair for CVPR workshop “Navigating the Future: Ensuring Trustworthiness in Multi-Modal
+                  Open-World Intelligence”</li>
+                <li>Program committee member of Association for the Advancement of Artificial Intelligence (AAAI)</li>
+                <li>Technical program committee member of IEEE 5th Annual AI IoT Congress (AIIoT)</li>
+                <li>Technical program committee member of IEEE 12th International Conference on the Internet of
+                  Everything, Microwave, Embedded, Communication, and Networks (IEMECON)</li>
+                <li>Technical program committee member of IEEE 15th Annual Computing and Communication Workshop and
+                  Conference (CCWC)</li>
+                <li>Member of International advisory committee member of 2024 IEEE International Conference on Data
+                  Computation and Communication (ICDCC)</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Invited Speaker</h3>
+              <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                 <li>Keynote speaker at International advisory committee member of 2024 IEEE International Conference on Data
+                  Computation and Communication (ICDCC)
+                </li>
+                <li>Invited speaker at <a href="https://futuristexpo.eu/" target="_blank"
+                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">Futurist Expo 2025</a></li>
+                <li>Invited speaker in International Conference on ML and AI (ICMLAI-2025) in Amsterdam, Netherlands
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Mentorship</h3>
+              <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                <li>Mentored and Judged the UC Berkeley Cal Hacks Hackathon. This role involved assessing innovative
+                  projects and providing mentorship to aspiring AI developers and researchers.</li>
+                <li>Mentored students in AAAI undergraduate consortium to revise and finalize their AI research
+                  proposals.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Memberships</h3>
+              <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
+                <li>IEEE Senior Member</li>
+                <li>Member of IET</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" class="mb-6">
+          <h2 class="section-header">Education</h2>
+          <div class="space-y-6">
+            <div class="degree p-5 border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800 transition-shadow duration-300 ease-in-out hover:shadow-md">
+              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-1">M.S. Electrical Engineering</h3>
+              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-2">Aug 2013 - May 2015</span>
+             </div>
+            <div class="degree p-5 border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800 transition-shadow duration-300 ease-in-out hover:shadow-md">
+              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-1">B. Tech. Electrical and Electronics Engineering</h3>
+              <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">Pondicherry Engineering College, Puducherry, India</h4>
+              <span class="text-sm text-slate-500 dark:text-slate-500 italic">Jul 2009 - May 2013</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+     </div>
+     <footer class="text-center mt-16 pt-8 border-t border-slate-300 dark:border-slate-700">
+      <p class="text-sm text-slate-500 dark:text-slate-400">
+        &copy; Jeshwanth Challagundla 2024
+      </p>
     </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-  </body>
+  </div>
+
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    const applyTheme = (theme) => {
+      if (theme === 'dark') {
+        htmlElement.classList.add('dark');
+      } else {
+        htmlElement.classList.remove('dark');
+      }
+    };
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      applyTheme(savedTheme);
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = htmlElement.classList.contains('dark');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  </script>
+
+ </body>
 </html>
