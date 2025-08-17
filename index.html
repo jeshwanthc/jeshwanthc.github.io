@@ -23,205 +23,94 @@
 
   <script>
     tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              primary: {
-                DEFAULT: '#1e40af',
-                hover: '#1d4ed8'
-              },
-              secondary: '#64748b',
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            spacing: {
-              '3.5': '0.875rem',
-            }
-          }
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#1e40af', hover: '#1d4ed8' },
+            secondary: '#64748b',
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          spacing: { '3.5': '0.875rem' }
         }
       }
+    }
   </script>
 
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .portrait {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border: 4px solid #f1f5f9;
-      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    }
-    .dark .portrait {
-        border-color: #1e293b;
-    }
-
+    body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .portrait { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 4px solid #f1f5f9; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+    .dark .portrait { border-color: #1e293b; }
 
     .icon-link span[class*="fa-"],
     .icon-link svg {
-        display: inline-block;
-        width: 1.875rem;
-        height: 1.875rem;
-        vertical-align: middle;
-        color: #64748b;
-        transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+      display: inline-block; width: 1.875rem; height: 1.875rem; vertical-align: middle; color: #64748b; transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
     }
-     .icon-link span[class*="fa-"] {
-        font-size: 1.875rem;
-        line-height: 1;
-     }
+    .icon-link span[class*="fa-"] { font-size: 1.875rem; line-height: 1; }
+    .dark .icon-link span[class*="fa-"], .dark .icon-link svg { color: #94a3b8; }
+    .icon-link:hover span[class*="fa-"], .icon-link:hover svg { color: #0f172a; transform: scale(1.1); }
+    .dark .icon-link:hover span[class*="fa-"], .dark .icon-link:hover svg { color: #f8fafc; }
 
-    .dark .icon-link span[class*="fa-"],
-    .dark .icon-link svg {
-        color: #94a3b8;
-    }
+    .section-header { font-size: 1.5rem; font-weight: 600; color: #1e293b; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom-width: 2px; border-color: #e2e8f0; }
+    .dark .section-header { color: #f1f5f9; border-color: #334155; }
 
+    main ul { list-style-position: outside; padding-left: 1.25rem; margin-top: 0.5rem; }
+    main li { margin-bottom: 0.5rem; padding-left: 0.5rem; }
+    main li::marker { color: #64748b; }
+    .dark main li::marker { color: #94a3b8; }
 
-    .icon-link:hover span[class*="fa-"],
-    .icon-link:hover svg {
-      color: #0f172a;
-      transform: scale(1.1);
-    }
-    .dark .icon-link:hover span[class*="fa-"],
-    .dark .icon-link:hover svg {
-      color: #f8fafc;
-    }
+    .nav-button { display: flex; align-items: center; justify-content: center; }
 
-
-    .section-header {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: #1e293b;
-        margin-bottom: 1.25rem;
-        padding-bottom: 0.5rem;
-        border-bottom-width: 2px;
-        border-color: #e2e8f0;
-    }
-    .dark .section-header {
-        color: #f1f5f9;
-        border-color: #334155;
-    }
-
-     main ul {
-        list-style-position: outside;
-        padding-left: 1.25rem;
-        margin-top: 0.5rem;
-    }
-     main li {
-        margin-bottom: 0.5rem;
-        padding-left: 0.5rem;
-    }
-     main li::marker {
-        color: #64748b;
-    }
-     .dark main li::marker {
-        color: #94a3b8;
-    }
-
-    .nav-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #theme-toggle {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        background-color: #e2e8f0;
-        color: #334155;
-        border: none;
-        padding: 0.5rem;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        z-index: 10;
-    }
-    #theme-toggle:hover {
-        background-color: #cbd5e1;
-    }
-    .dark #theme-toggle {
-        background-color: #334155;
-        color: #cbd5e1;
-    }
-    .dark #theme-toggle:hover {
-        background-color: #475569;
-    }
+    #theme-toggle { position: absolute; top: 1rem; right: 1rem; background-color: #e2e8f0; color: #334155; border: none; padding: 0.5rem; border-radius: 50%; cursor: pointer; transition: background-color 0.3s ease, color 0.3s ease; z-index: 10; }
+    #theme-toggle:hover { background-color: #cbd5e1; }
+    .dark #theme-toggle { background-color: #334155; color: #cbd5e1; }
+    .dark #theme-toggle:hover { background-color: #475569; }
     .dark #theme-toggle-light-icon { display: none; }
     #theme-toggle-dark-icon { display: none; }
     .dark #theme-toggle-dark-icon { display: inline-block; }
-
-
   </style>
-
 </head>
 
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 leading-relaxed transition-colors duration-300 ease-in-out">
   <div class="container mx-auto max-w-6xl p-4 md:p-8 relative">
     <button id="theme-toggle" type="button" title="Toggle dark mode">
-        <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-        <svg id="theme-toggle-light-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+      <svg id="theme-toggle-light-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
     </button>
 
     <div class="md:flex bg-white dark:bg-slate-800 rounded-xl shadow-xl overflow-hidden transition-colors duration-300 ease-in-out">
 
       <aside class="md:w-1/4 p-6 md:p-8 text-center mb-12 md:mb-0 flex flex-col items-center self-start">
-        <img
-            src="./files/headshot.jpg"
-            alt="Portrait of Jeshwanth Challagundla"
-            class="portrait"
-            onerror="this.onerror=null; this.src='https://placehold.co/160x160/e2e8f0/64748b?text=JC'; this.alt='Placeholder portrait image';"
-        >
+        <img src="./files/headshot.jpg" alt="Portrait of Jeshwanth Challagundla" class="portrait" onerror="this.onerror=null; this.src='https://placehold.co/160x160/e2e8f0/64748b?text=JC'; this.alt='Placeholder portrait image';" />
 
         <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">Jeshwanth Challagundla</h1>
 
         <p class="text-slate-600 dark:text-slate-400 text-sm mb-5">jeswanth111@gmail.com</p>
 
         <div class="flex space-x-4 mb-6 justify-center w-full">
-          <a href="https://github.com/jeshwanthc" target="_blank" aria-label="GitHub Profile" class="icon-link">
-            <span class="fab fa-github" aria-hidden="true"></span>
+          <a href="https://github.com/jeshwanthc" target="_blank" aria-label="GitHub Profile" class="icon-link"><span class="fab fa-github" aria-hidden="true"></span></a>
+          <a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank" aria-label="Google Scholar Profile" class="icon-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
           </a>
-          <a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank"
-            aria-label="Google Scholar Profile" class="icon-link">
-             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/jeshwanth-challagundla/" target="_blank" aria-label="LinkedIn Profile"
-            class="icon-link">
-            <span class="fab fa-linkedin" aria-hidden="true"></span>
-          </a>
+          <a href="https://www.linkedin.com/in/jeshwanth-challagundla/" target="_blank" aria-label="LinkedIn Profile" class="icon-link"><span class="fab fa-linkedin" aria-hidden="true"></span></a>
         </div>
 
         <nav class="flex flex-col space-y-2 w-full items-center md:items-stretch">
-          <a href="#" class="nav-button w-full text-center text-sm font-medium bg-slate-200 hover:bg-slate-300 text-slate-700 hover:text-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white rounded-lg px-4 py-2 transition-colors duration-150 ease-in-out">
-             Home
-          </a>
-          </nav>
+          <a href="#about" class="nav-button w-full text-center text-sm font-medium bg-slate-200 hover:bg-slate-300 text-slate-700 hover:text-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white rounded-lg px-4 py-2 transition-colors duration-150 ease-in-out">About</a>
+          <a href="#work-experience" class="nav-button w-full text-center text-sm font-medium bg-slate-200 hover:bg-slate-300 text-slate-700 hover:text-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white rounded-lg px-4 py-2 transition-colors duration-150 ease-in-out">Experience</a>
+          <a href="#research-community" class="nav-button w-full text-center text-sm font-medium bg-slate-200 hover:bg-slate-300 text-slate-700 hover:text-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white rounded-lg px-4 py-2 transition-colors duration-150 ease-in-out">Publications</a>
+          <a href="#education" class="nav-button w-full text-center text-sm font-medium bg-slate-200 hover:bg-slate-300 text-slate-700 hover:text-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white rounded-lg px-4 py-2 transition-colors duration-150 ease-in-out">Education</a>
+        </nav>
       </aside>
 
       <main class="md:w-3/4 p-6 md:p-10">
 
         <section id="about" class="mb-12">
-          <h2 class="section-header">Hello!</h2>
+          <h2 class="section-header">About</h2>
           <div class="space-y-4 text-slate-700 dark:text-slate-300 text-base">
-             <p>
-                I engineer intelligent systems at Google DeepMind. As a Senior Machine Learning Software Engineer, I specialize in AI-driven Software Engineering and Neural Network Optimization.</p>
-             <p>
-                At DeepMind, I engineer core components for Gemini, developing its Advanced Data Analysis and Gemini Canvas web development capabilities. My work involves building robust planning, prompting, and safety infrastructure for these cutting-edge features.</p>
-             <p>
-                Before joining DeepMind, I spearheaded a central personalization platform within Google Assistant and fine-tuned contact models using advanced Neural Network Optimization. My background also includes optimizing perception and localization networks for autonomous vehicles during my time at General Motors.</p>
-             <p>
-                My passion lies at the intersection of cutting-edge research: exploring everything from second-order optimization and autonomous driving to Generative AI, agentic frameworks, and AI agents that engineer software. I actively contribute back to the research community through peer review and program committee roles.
-             </p>
+            <p>I’m a Senior Machine Learning Software Engineer at Google DeepMind focused on AI‑driven software engineering, multi‑step planning, safety, and neural network optimization. I build core capabilities for Gemini—spanning Canvas web‑app generation, advanced data analysis, and horizontal prompting/safety infrastructure.</p>
+            <p>Previously, I led personalization for Google Assistant (the <em>Learn &amp; Adapt</em> platform) and built dual‑encoder models for contact matching. Earlier, I worked on perception and localization for autonomous driving at General Motors, and on industrial ML systems at UHV Technologies.</p>
+            <p>My research spans second‑order optimization, generative AI, and autonomous systems. I’ve authored multiple publications, hold a defensive publication on robustness‑oriented feature optimization, and regularly review for NeurIPS, CVPR, and ICLR.</p>
           </div>
         </section>
 
@@ -229,202 +118,141 @@
           <h2 class="section-header">Work Experience</h2>
           <div class="space-y-8">
             <div class="job mb-8">
-              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Senior Machine Learning Software Engineer</h3>
-              <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">Google DeepMind, Mountain View, CA</h4>
-              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-4">Dec 2019 - Present</span>
+              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Senior Software Engineer (ML/AI)</h3>
+              <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">Google DeepMind · Mountain View, CA</h4>
+              <span class="text-sm text-slate-500 italic block mb-4">Dec 2019 – Present</span>
               <div class="mb-4 pl-4 border-l-4 border-blue-300 dark:border-blue-600">
                 <h5 class="text-lg font-semibold text-blue-800 dark:text-blue-400 mb-2">Gemini</h5>
-                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Gemini Canvas</h6>
+                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Gemini Canvas (Create Web Apps)</h6>
                 <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                  <li>Fine-tuned the Gemini model to improve the quality of web apps built by Gemini Canvas, making the
-                    apps more visually appealing (beating OpenAI ChatGPT Canvas quality per TechRadar review). Gemini
-                    Canvas helps users build high-quality web apps previewable in the collaborative space.</li>
+                  <li>Fine‑tuned Gemini to improve the visual quality of generated web apps in Canvas; developed self‑refinement via visual feedback yielding ~<strong>86%</strong> SxS improvement vs. baseline.</li>
                 </ul>
-                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Gemini Advanced Data Analysis Feature</h6>
+                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Gemini Multi‑step Planning (Mosaic)</h6>
                 <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                  <li>Developed and launched Gemini advanced data analysis feature in ~40 languages
-                    across 200+ countries.</li>
-                  <li>The feature uses a multi-agent framework (planning, coding agents) for data analysis queries and
-                    is expanding to Google Sheets and Vertex AI.</li>
-                  <li>Improved the quality of model-generated insights from graphs using proprietary technology with pending patent.</li>
+                  <li>Led a multi‑step planning framework enabling complex task fulfillment via planning/reasoning over multiple steps.</li>
+                  <li>Built shared schemas and encoders used across SFT and RL experiments; created horizontal dynamic prompting and plan‑mutation infra.</li>
                 </ul>
-                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Gemini Horizontal Infra</h6>
+                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Advanced Data Analysis</h6>
                 <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                  <li>Developed horizontal infra for dynamically prompting the Gemini model based on user query, past
-                    conversations, previous model planning steps and other context to change model response
-                    distribution.</li>
-                  <li>Built a horizontal plan mutation framework for injecting synthetic model planning steps via
-                    deterministic rules, enabling feature development teams.</li>
-                </ul>
-                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Gemini Safety</h6>
-                <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                  <li>Implemented and tuned safety classifiers for Gemini Advanced data analysis feature</li>
+                  <li>Led launch across ~<strong>40</strong> languages and <strong>200+</strong> countries using multi‑agent orchestration (planning/coding agents); expanding to Google Sheets and Vertex AI.</li>
+                  <li>Improved graph‑insight quality using proprietary techniques (patented); improved writing style/technical language via SFT.</li>
+                  <li>Integrated/tuned safety classifiers (sexual content, hate, toxicity, harassment) across text, images, and audio.</li>
                 </ul>
               </div>
               <div class="pl-4 border-l-4 border-green-300 dark:border-green-600">
                 <h5 class="text-lg font-semibold text-green-800 dark:text-green-400 mb-2">Google Assistant</h5>
-                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Personalization</h6>
+                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Personalization (Learn &amp; Adapt)</h6>
                 <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                  <li>Led the development of a centralized personalization platform called Learn&Adapt predicting user preferences (music,
-                    movies, contacts, devices) using contextual analysis of interaction patterns, time, weather, and
-                    device status.</li>
-                  <li>Enhanced satisfaction for non-English speaking users in the US by 21% and achieved a 9% overall
-                    satisfaction improvement, significantly benefiting underrepresented language groups.</li>
+                  <li>Built a horizontal platform to generate personalized entity signals from interaction history—boosting biasing, grounding, and ranking.</li>
+                  <li><strong>Personalized TV &amp; Movies</strong> (en‑US, Android TV): SAI ↑ <strong>+8.49%</strong>, TV watches ↑ <strong>+16.24%</strong>, search fallback ↓ <strong>−10.21%</strong>.</li>
+                  <li><strong>Personalized Top Intents</strong> — en‑IN: Opa Comms No‑Match ↓ <strong>12.43%</strong>; en‑GB: SAI ↑ <strong>22.29%</strong>; it‑IT: SAI ↑ <strong>12.27%</strong>.</li>
                 </ul>
-                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Contact Matching</h6>
+                <h6 class="text-base font-semibold text-slate-700 dark:text-slate-300 mt-3 mb-1">Contact Matching &amp; Selection</h6>
                 <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                  <li>Designed and deployed BERT-based dual-encoder models to improve contact matching accuracy for
-                    communication queries (calling, messaging).</li>
+                  <li><strong>Muzzy</strong> fuzzy contact matching — dual‑encoder models for voice queries; TCR ↑ <strong>+0.28%</strong> overall, <strong>+0.80%</strong> on Android; fewer no‑match errors.</li>
+                  <li><strong>Unified Contact Selection</strong> — server‑side + on‑device (TFLite); ~<strong>30%</strong> fewer incorrect calls across ~<strong>13M</strong> daily queries.</li>
                 </ul>
               </div>
             </div>
 
             <div class="job mb-8">
               <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Autonomous Driving Software Engineer</h3>
-              <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">General Motors (Collaboration with Cruise - Perception and
-                Localization), Warren, MI</h4>
-              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-3">May 2017 - Nov 2019</span>
+              <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">General Motors (with Cruise – Perception &amp; Localization), Warren, MI</h4>
+              <span class="text-sm text-slate-500 italic block mb-3">May 2017 – Nov 2019</span>
               <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                <li>Developed a lane edge registration module using a deep ICP algorithm to align perception lane edges
-                  with map lane edges, improving accuracy in autonomous vehicle navigation.</li>
-                <li>Built a perception-map association module to reliably associate landmarks detected in perception
-                  with corresponding map landmarks, enhancing map-based localization.</li>
-                <li>Implemented and benchmarked deep neural networks for pixel-wise scene segmentation on public and
-                  internal datasets, optimizing performance on GTX 1080 Ti GPUs.</li>
-                <li>Developed a web tool using roslibjs to monitor the status of autonomous vehicle sensors and modules
-                  in real-time, improving system visibility and diagnostics.</li>
+                <li>Lane‑edge registration via deep ICP aligning perception edges to HD‑map lanes.</li>
+                <li>Perception‑map landmark association improving map‑based localization.</li>
+                <li>Implemented/benchmarked pixel‑wise scene segmentation; optimized on GTX 1080 Ti.</li>
+                <li>roslibjs web tool for real‑time sensor/module monitoring.</li>
+                <li><strong>Defensive Publication:</strong> <em>Systematic Approach to Optimize Feature Vectors for Increased Robustness of Deep Neural Networks</em> — Taguchi‑method‑driven hyperparameter/architecture optimization improving generalizability and informing production AI modules.</li>
               </ul>
             </div>
 
             <div class="job mb-8">
               <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Senior Software Engineer</h3>
               <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">Magna, Auburn Hills, MI</h4>
-              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-3">Feb 2016 - Apr 2017</span>
+              <span class="text-sm text-slate-500 italic block mb-3">Feb 2016 – Apr 2017</span>
               <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                <li>Benchmarked an in-house computer vision chip against Mobileye EyeQ3, providing critical performance
-                  comparisons for advanced driver assistance systems (ADAS).</li>
-                <li>Developed a closed-loop test system within dSpace AutomationDesk to evaluate front camera module
-                  features like lane-keeping assist and collision mitigation braking, ensuring robust ADAS
-                  functionality.</li>
-                <li>Automated system-level test cases for ADAS validation within dSpace AutomationDesk, improving
-                  efficiency and accuracy.</li>
-                <li>Developed a LabVIEW image comparison library for rear-view camera ECU overlay testing, enhancing
-                  visual testing capabilities.</li>
+                <li>Benchmarked in‑house CV chip vs Mobileye EyeQ3 (ADAS).</li>
+                <li>Closed‑loop dSpace AutomationDesk tests for LKAS &amp; collision‑mitigation braking.</li>
+                <li>Automated ADAS validation; LabVIEW image‑comparison library for rear‑view ECU overlay tests.</li>
               </ul>
             </div>
 
             <div class="job mb-8">
               <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Embedded Software Engineer</h3>
               <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">UHV Technologies Inc., Fort Worth, TX</h4>
-              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-3">Jun 2015 - Feb 2016</span>
-              <h5 class="text-base font-semibold text-slate-700 dark:text-slate-300 mb-1">Aluminum Alloy Sorter using X-Ray Fluorescence, ARPA-E
-              </h5>
+              <span class="text-sm text-slate-500 italic block mb-3">Jun 2015 – Feb 2016</span>
+              <h5 class="text-base font-semibold text-slate-700 dark:text-slate-300 mb-1">Aluminum Alloy Sorter using X‑Ray Fluorescence (ARPA‑E)</h5>
               <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                <li>Increased aluminum alloy sorting accuracy by 12% using ML models on X-ray fluorescence spectrum data
-                  of various aluminum alloys.</li>
-                <li>Developed a vision system to estimate the size of aluminum pieces on a conveyor belt in real-time,
-                  enhancing sorting accuracy.</li>
-                <li>Automated the sorting process using LABVIEW and NI-6008, streamlining operations and improving
-                  system efficiency.</li>
+                <li>ML models over XRF spectra improved sorting accuracy by <strong>12%</strong>.</li>
+                <li>Real‑time vision system for piece‑size estimation on conveyor.</li>
+                <li>Automated sorting via LabVIEW + NI‑6008.</li>
               </ul>
             </div>
 
             <div class="job">
               <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Engineering Intern</h3>
               <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">UHV Technologies Inc., Fort Worth, TX</h4>
-              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-2">Sep 2014 - May 2015</span>
-              <p class="text-slate-600 dark:text-slate-400 text-sm">Contributed to various engineering tasks supporting ongoing
-                projects.</p>
+              <span class="text-sm text-slate-500 italic block mb-2">Sep 2014 – May 2015</span>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">Supported R&amp;D on industrial ML and instrumentation.</p>
             </div>
           </div>
         </section>
 
         <section id="research-community" class="mb-12">
-          <h2 class="section-header">Research Publications & Community Involvement</h2>
+          <h2 class="section-header">Research Publications &amp; Community</h2>
           <div class="space-y-8">
             <div>
               <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Author</h3>
               <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                <li><a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank"
-                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">Multiple Gain Adaptations for Improved
-                    Neural Networks Training</a> (Received Best Presenter award from IEEE CCWC)</li>
-                <li><a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank"
-                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">State-Based Dynamic Graph with
-                    Breadth-First Progression for Autonomous Robots</a></li>
-                <li><a href="https://scholar.google.com/citations?user=vaSTuywAAAAJ&hl=en" target="_blank"
-                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">Adaptive Multiple Optimal Learning Factors
-                    for Neural Network Training</a></li>
-                <li>Trajectory Prediction in Autonomous Driving: a Comprehensive Review of Deep Learning Models and
-                  Future Direction</li>
-                <li>Improving Small Object Detection With Area-Scaled and Dynamic Focal Loss</li>
-                <li>Second Order Neural Network Optimization: Meta Analysis</li>
-                <li>LLMs as Master Forgers: Generating Synthetic Time Series Data for Manufacturing</li>
+                <li><em>Multiple Gain Adaptations for Improved Neural Networks Training</em> — Best Presenter (IEEE CCWC).</li>
+                <li><em>State‑Based Dynamic Graph with Breadth‑First Progression for Autonomous Robots</em>.</li>
+                <li><em>Adaptive Multiple Optimal Learning Factors for Neural Network Training</em> (thesis).</li>
+                <li><em>Trajectory Prediction in Autonomous Driving: A Comprehensive Review of Deep Learning Models and Future Direction</em>.</li>
+                <li><em>Improving Small Object Detection with Area‑Scaled and Dynamic Focal Loss</em>.</li>
+                <li><em>Second Order Neural Network Optimization: Meta Analysis</em>.</li>
+                <li><em>LLMs as Master Forgers: Generating Synthetic Time Series Data for Manufacturing</em>.</li>
+                <li><em>SI‑Agent: An Agentic Framework for Feedback‑Driven Generation and Tuning of Human‑Readable System Instructions for LLMs</em> (preprint).</li>
+                <li><strong>Defensive Publication:</strong> <em>Systematic Approach to Optimize Feature Vectors for Increased Robustness of Deep Neural Networks</em>.</li>
               </ul>
             </div>
-
             <div>
-              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Partial Contributor</h3>
+              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Contributor</h3>
               <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                <li><a href="https://deepmind.google/technologies/gemini/#introduction" target="_blank"
-                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">Gemini: A Family of Highly Capable
-                    Multimodal Models</a></li>
-                <li><a href="https://deepmind.google/technologies/gemini/gemini-1-5/" target="_blank"
-                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">Gemini 1.5: Unlocking Multimodal
-                    Understanding Across Millions of Tokens of Context</a></li>
+                <li><em>Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next‑Gen Agentic Capabilities</em>.</li>
               </ul>
             </div>
-
             <div>
               <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Reviewer</h3>
               <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                <li>Neural Information Processing Systems (NeurIPS)</li>
-                <li>The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
-                <li>International Conference on Learning Representations (ICLR)</li>
-                <li>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</li>
-                <li>IEEE Transactions on Artificial Intelligence (TAI)</li>
-                <li>Springer Nature: Neural Processing Letters</li>
+                <li>NeurIPS · CVPR · ICLR</li>
+                <li>IEEE TNNLS · IEEE TAI · Neural Processing Letters</li>
               </ul>
             </div>
-
             <div>
-              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Program Committee and Advisory Roles</h3>
+              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Program Committee &amp; Advisory Roles</h3>
               <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                <li>Area Chair for CVPR workshop “Navigating the Future: Ensuring Trustworthiness in Multi-Modal
-                  Open-World Intelligence”</li>
-                <li>Program committee member of Association for the Advancement of Artificial Intelligence (AAAI)</li>
-                <li>Technical program committee member of IEEE 5th Annual AI IoT Congress (AIIoT)</li>
-                <li>Technical program committee member of IEEE 12th International Conference on the Internet of
-                  Everything, Microwave, Embedded, Communication, and Networks (IEMECON)</li>
-                <li>Technical program committee member of IEEE 15th Annual Computing and Communication Workshop and
-                  Conference (CCWC)</li>
-                <li>Member of International advisory committee member of 2024 IEEE International Conference on Data
-                  Computation and Communication (ICDCC)</li>
+                <li>Area Chair — CVPR workshop “Navigating the Future: Ensuring Trustworthiness in Multi‑Modal Open‑World Intelligence”.</li>
+                <li>Program Committee — AAAI.</li>
+                <li>Technical Program Committee — IEEE AIIoT, IEMECON, CCWC.</li>
+                <li>International Advisory Committee &amp; Keynote — IEEE ICDCC 2024.</li>
               </ul>
             </div>
-
             <div>
-              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Invited Speaker</h3>
+              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Invited Talks</h3>
               <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                 <li>Keynote speaker at International advisory committee member of 2024 IEEE International Conference on Data
-                  Computation and Communication (ICDCC)
-                </li>
-                <li>Invited speaker at <a href="https://futuristexpo.eu/" target="_blank"
-                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline">Futurist Expo 2025</a></li>
-                <li>Invited speaker in International Conference on ML and AI (ICMLAI-2025) in Amsterdam, Netherlands
-                </li>
+                <li>Futurist Expo 2025 (EU).</li>
+                <li>ICMLAI‑2025 (Amsterdam).</li>
               </ul>
             </div>
-
             <div>
               <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Mentorship</h3>
               <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
-                <li>Mentored and Judged the UC Berkeley Cal Hacks Hackathon. This role involved assessing innovative
-                  projects and providing mentorship to aspiring AI developers and researchers.</li>
-                <li>Mentored students in AAAI undergraduate consortium to revise and finalize their AI research
-                  proposals.</li>
+                <li>Judge &amp; Mentor — UC Berkeley Cal Hacks.</li>
+                <li>AAAI Undergraduate Consortium — research‑proposal mentoring.</li>
               </ul>
             </div>
-
             <div>
               <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Memberships</h3>
               <ul class="list-disc text-sm text-slate-600 dark:text-slate-400">
@@ -440,22 +268,23 @@
           <div class="space-y-6">
             <div class="degree p-5 border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800 transition-shadow duration-300 ease-in-out hover:shadow-md">
               <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-1">M.S. Electrical Engineering</h3>
-              <span class="text-sm text-slate-500 dark:text-slate-500 italic block mb-2">Aug 2013 - May 2015</span>
-             </div>
+              <h4 class="text-lg text-slate-600 dark:text-slate-400">University of Texas at Arlington, Arlington, TX</h4>
+              <span class="text-sm text-slate-500 italic block mb-2">Aug 2013 – May 2015</span>
+              <p class="text-sm text-slate-600 dark:text-slate-400">GPA 4.0/4.0 · Image Processing &amp; Neural Network Lab fellowship. Thesis: <em>Adaptive Multiple Optimal Learning Factors for Neural Network Training</em>—second‑order optimization with adaptive factor groups per epoch.</p>
+            </div>
             <div class="degree p-5 border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800 transition-shadow duration-300 ease-in-out hover:shadow-md">
-              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-1">B. Tech. Electrical and Electronics Engineering</h3>
-              <h4 class="text-lg text-slate-600 dark:text-slate-400 mb-1">Pondicherry Engineering College, Puducherry, India</h4>
-              <span class="text-sm text-slate-500 dark:text-slate-500 italic">Jul 2009 - May 2013</span>
+              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-1">B.Tech. Electrical &amp; Electronics Engineering</h3>
+              <h4 class="text-lg text-slate-600 dark:text-slate-400">Pondicherry Engineering College, Puducherry, India</h4>
+              <span class="text-sm text-slate-500 italic">Jul 2009 – May 2013</span>
             </div>
           </div>
         </section>
 
       </main>
-     </div>
-     <footer class="text-center mt-16 pt-8 border-t border-slate-300 dark:border-slate-700">
-      <p class="text-sm text-slate-500 dark:text-slate-400">
-        &copy; Jeshwanth Challagundla 2024
-      </p>
+    </div>
+
+    <footer class="text-center mt-16 pt-8 border-t border-slate-300 dark:border-slate-700">
+      <p class="text-sm text-slate-500 dark:text-slate-400">&copy; Jeshwanth Challagundla <span id="year"></span></p>
     </footer>
   </div>
 
@@ -464,17 +293,11 @@
     const htmlElement = document.documentElement;
 
     const applyTheme = (theme) => {
-      if (theme === 'dark') {
-        htmlElement.classList.add('dark');
-      } else {
-        htmlElement.classList.remove('dark');
-      }
+      if (theme === 'dark') { htmlElement.classList.add('dark'); } else { htmlElement.classList.remove('dark'); }
     };
 
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      applyTheme(savedTheme);
-    }
+    if (savedTheme) { applyTheme(savedTheme); }
 
     themeToggleBtn.addEventListener('click', () => {
       const isDark = htmlElement.classList.contains('dark');
@@ -482,7 +305,9 @@
       applyTheme(newTheme);
       localStorage.setItem('theme', newTheme);
     });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
- </body>
+</body>
 </html>
